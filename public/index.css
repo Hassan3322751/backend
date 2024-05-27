@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    background: gray;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+#name,#price,#quantity,#imageUrl,#email{
+    width: 70%;
+    height: 5vh;
+    margin: 10px 0px;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    border: 1px solid beige;
+    color: black;
+}
+button{
+    height: 5vh;
+    width: 45%;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: black;
+    color: white;
+}
