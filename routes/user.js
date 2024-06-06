@@ -32,10 +32,15 @@ router.post("/login", async (req, res) => {
             const token = jwt.sign({_id: user._id}, "aduyauihdjjhiodohsdhn8qwe8989wersod")
             
             // res.cookie("token", token, ({ httpOnly: true }) );
-            res.cookie("token", token, {  });
+            res.cookie("token", token, { 
+                // httpOnly: true,
+                secure: true,
+                sameSite: 'None',
+            });
             
             return res.status(200).json({
                 success: true,
+                // message: token,
             });
         } else if(password !== user.password) {
             return res.status(401).json(

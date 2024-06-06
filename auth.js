@@ -6,6 +6,7 @@ import userRouter from './routes/user.js'
 import SocialmediaRouter from './routes/Socialmedia_Routes.js'
 import taskRouter from './routes/tasks.js'
 import bonusRouter from './routes/dailyBonus.js'
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 4001;
@@ -21,7 +22,8 @@ app.use(
       allowedHeaders: ['Content-Type', 'Authorization'],
     })
 );
-
+app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
